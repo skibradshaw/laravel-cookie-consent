@@ -1,0 +1,30 @@
+{
+    "name": "devrabiul/laravel-cookie-consent",
+    "type": "library",
+    "description": "Laravel Toaster Magic is a powerful, lightweight, and flexible toast notification library designed for modern web applications. It supports real-time notifications, customizable themes, smooth animations, and seamless integration with Laravel projects.",
+    "keywords": ["laravel", "toaster", "magic", "notifications"],
+    "homepage": "https://github.com/devrabiul/laravel-cookie-consent",
+    "license": "MIT",
+    "authors": [
+        {
+        "name": "Muhammad Rabiul",
+        "email": "devrabiul@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Devrabiul\\CookieConsent\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel" :{
+            "providers" : [
+                "Devrabiul\\CookieConsent\\CookieConsentServiceProvider"
+            ],
+            "aliases": {
+                "CookieConsent": "Devrabiul\\CookieConsent\\Facades\\CookieConsent"
+            }
+        }
+    },
+    "require": {}
+}

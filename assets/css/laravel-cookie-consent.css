@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --cc-card-bg-color: #FFFFFF;
+    --cc-card-text-color: #000000;
+    --cc-button-bg-color: #161a1d;
+    --cc-button-bg-color-rgb: 22, 26, 29;
+    --cc-button-bg-opacity: .8;
+    --cc-button-text-color: #FFFFFF;
+}
+
+[theme="dark"] {
+    --cc-card-bg-color: #161a1c;
+    --cc-card-text-color: #f0f0f0;
+    --cc-button-bg-color-rgb: 194, 208, 224;
+    --cc-button-text-color: #161a1c;
+}
+
+.cookie-disable-interaction body {
+    height: auto !important;
+    overflow: hidden !important;
+}
+
+.cookie-disable-interaction body::before {
+    background: rgba(0,0,0,.65);
+    content: "";
+    inset: 0;
+    opacity: 1;
+    position: fixed;
+    z-index: 0;
+}
+
+.cookie-consent-root {
+    --cookie-consent-width: 100%;
+    --cookie-consent-bottom: 20px;
+    position: fixed;
+    background: var(--cc-card-bg-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 1000;
+    bottom: var(--cookie-consent-bottom);
+    inset-inline-start: 20px;
+    inset-inline-end: auto;
+    max-width: var(--cookie-consent-width);
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+    transition: 1s ease-in-out all;
+}
+
+.cookie-consent-hide {
+    --cookie-consent-bottom: -110%;
+}
+
+.consent-layout-box,
+.consent-layout-box-inline {
+    --cookie-consent-width: 24rem;
+}
+
+.cookie-consent-content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.consent-layout-box .cookie-consent-content-container,
+.consent-layout-box-inline .cookie-consent-content-container {
+    flex-direction: column;
+}
+
+.cookie-consent-content-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--cc-card-text-color);
+    margin: 0;
+    padding: 0 0 .35rem 0;
+}
+
+.cookie-consent-content-description {
+    font-size: 14px;
+    color: var(--cc-card-text-color);
+    margin: 0;
+    padding: 0;
+    opacity: .8;
+}
+
+.cookie-consent-button-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.consent-layout-box .cookie-consent-button-container,
+.consent-layout-box .cookie-consent-button-action,
+.consent-layout-box-inline .cookie-consent-button-container,
+.consent-layout-box-inline .cookie-consent-button-action {
+    width: 100%;
+}
+
+.cookie-consent-button-action {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.consent-layout-box-inline .cookie-consent-button-action {
+    flex-direction: row;
+}
+
+.cookie-consent-button-container button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgba(var(--cc-button-bg-color-rgb), var(--cc-button-bg-opacity, 1));
+    color: var(--cc-button-text-color);
+    min-width: max-content;
+}
+
+.cookie-consent-button-container button.preferences-btn {
+    --cc-button-bg-color-rgb: 227, 232, 235;
+    --cc-button-text-color: #000;
+}
+
+.cookie-consent-button-container button:hover {
+    --cc-button-bg-opacity: 1;
+}
+
+.consent-layout-box-inline .cookie-consent-button-action button {
+    width: 100%;
+}
+
+
+.cookie-consent-links-container {
+    text-align: center;
+    padding: 10px 20px;
+    background: #ffffff;
+    background: -webkit-linear-gradient(0deg, #ffffff 0%, #efefef 100%);
+    background: linear-gradient(0deg, #ffffff 0%, #efefef 100%);
+}
+
+[theme="dark"] .cookie-consent-links-container {
+    background: #1e1e1e;
+    background: -webkit-linear-gradient(0deg, #1e1e1e 0%, #2a2a2a 100%);
+    background: linear-gradient(0deg, #1e1e1e 0%, #2a2a2a 100%);
+    color: #ffffff;
+}
+
+
+.cookie-consent-links-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    gap: .5rem 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cookie-consent-links-container ul li {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.cookie-consent-links-container a {
+    text-decoration: none;
+    color: rgba(var(--cc-button-bg-color-rgb), var(--cc-button-bg-opacity, 1));
+    font-size: 12px;
+}
+
+.cookie-consent-links-container a:hover {
+    text-decoration: underline;
+}
