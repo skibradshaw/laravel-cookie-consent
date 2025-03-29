@@ -3,25 +3,27 @@
     cookie-consent-hide 
     {{ $cookieConfig['disable_page_interaction'] ? 'cookie-disable-interaction' : '' }} 
     consent-layout-{{ $cookieConfig['consent_modal_layout'] ?? 'bar' }}
-">
+" 
+data-cookie-lifetime="{{ $cookieConfig['cookie_lifetime'] }}" 
+data-reject-lifetime="{{ $cookieConfig['reject_lifetime'] }}"
+>
     <div class="cookie-consent-container">
         <div class="cookie-consent-content-container">
             <div class="cookie-consent-content">
-    
                 <div class="cookie-consent-content-title">
                     Cookie Disclaimer
                 </div>
                 <div class="cookie-consent-content-description">
-                    We use cookies (and other similar technologies) to collect data to improve your experience on 10015 Tools. By using 10015.io, you’re agreeing to the collection of data as described in our Privacy Policy.
+                    This website uses cookies to enhance your browsing experience, analyze site traffic, and personalize content. By continuing to use this site, you consent to our use of cookies. 
                 </div>
             </div>
     
             <div class="cookie-consent-button-container">
                 <div class="cookie-consent-button-action {{ $cookieConfig['flip_button'] ? 'flip-button' : '' }}">
-                    <button class="">
+                    <button class="cookie-consent-accept">
                         Accept all
                     </button>
-                    <button>
+                    <button class="cookie-consent-reject">
                         Reject all
                     </button>
                 </div>

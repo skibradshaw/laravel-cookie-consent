@@ -20,6 +20,9 @@ return [
     */
     'cookie_lifetime' => env('COOKIE_CONSENT_LIFETIME', 365), // Days
 
+
+    'reject_lifetime' => env('COOKIE_REJECT_LIFETIME', 7), // Days
+
     /*
     |--------------------------------------------------------------------------
     | GUI Options
@@ -29,15 +32,15 @@ return [
     | Consent Modal Layout
     |--------------------------------------------------------------------------
     | Determines the layout of the consent modal. Options:
-    | 'bar'           - A simple bar at the bottom or top of the screen.
-    | 'bar-inline'    - A compact inline bar.
     | 'box'    - A small floating box.
     | 'box-inline'    - A small floating box.
     | 'box-wide'      - A larger floating box.
     | 'cloud'         - A cloud-like floating consent box.
     | 'cloud-inline'  - A compact cloud-style box.
+    | 'bar'           - A simple bar at the bottom or top of the screen.
+    | 'bar-inline'    - A compact inline bar.
     */
-    'consent_modal_layout' => env('COOKIE_CONSENT_MODAL_LAYOUT', 'box-inline'),
+    'consent_modal_layout' => env('COOKIE_CONSENT_MODAL_LAYOUT', 'bar-inline'),
 
     /*
     |--------------------------------------------------------------------------
@@ -117,21 +120,6 @@ return [
             'text' => 'Terms and conditions',
             'link' => env('COOKIE_CONSENT_TERMS_URL', url('terms-and-conditions'))
         ],
-        [
-            'text' => 'Privacy Policy',
-            'link' => env('COOKIE_CONSENT_PRIVACY_POLICY_URL', url('privacy-policy'))
-        ],
-        [
-            'text' => 'Terms and conditions',
-            'link' => env('COOKIE_CONSENT_TERMS_URL', url('terms-and-conditions'))
-        ],
-        [
-            'text' => 'Privacy Policy',
-            'link' => env('COOKIE_CONSENT_PRIVACY_POLICY_URL', url('privacy-policy'))
-        ],
-        [
-            'text' => 'Terms and conditions',
-            'link' => env('COOKIE_CONSENT_TERMS_URL', url('terms-and-conditions'))
-        ]
+
     ],
 ];
