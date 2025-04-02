@@ -27,9 +27,11 @@ data-reject-lifetime="{{ $cookieConfig['reject_lifetime'] }}"
                         Reject all
                     </button>
                 </div>
+                @if ($cookieConfig['preferences_modal_enabled'])
                 <button class="preferences-btn">
                     Manage preferences
                 </button>
+                @endif
             </div>
         </div>
     </div>
@@ -56,7 +58,7 @@ data-reject-lifetime="{{ $cookieConfig['reject_lifetime'] }}"
         <div class="cookie-preferences-modal-header">
             <h2 id="cookie-modal-title">Cookie Preferences</h2>
             <button class="cookie-preferences-modal-close" aria-label="Close cookie preferences">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     <path d="M4 4L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
@@ -74,7 +76,7 @@ data-reject-lifetime="{{ $cookieConfig['reject_lifetime'] }}"
                             <span class="cookie-toggle-slider"></span>
                         </label>
                     </div>
-                    <p class="cookie-category-description">These cookies are necessary for the website to function and cannot be switched off.</p>
+                    <p>These cookies are necessary for the website to function and cannot be switched off.</p>
                 </div>
                 
                 <div class="cookie-category">
@@ -85,7 +87,7 @@ data-reject-lifetime="{{ $cookieConfig['reject_lifetime'] }}"
                             <span class="cookie-toggle-slider"></span>
                         </label>
                     </div>
-                    <p class="cookie-category-description">Allow us to analyze website usage to improve performance.</p>
+                    <p>Allow us to analyze website usage to improve performance.</p>
                 </div>
                 
                 <div class="cookie-category">
@@ -96,7 +98,7 @@ data-reject-lifetime="{{ $cookieConfig['reject_lifetime'] }}"
                             <span class="cookie-toggle-slider"></span>
                         </label>
                     </div>
-                    <p class="cookie-category-description">Used to track visitors across websites for advertising purposes.</p>
+                    <p>Used to track visitors across websites for advertising purposes.</p>
                 </div>
                 
                 <div class="cookie-category">
@@ -107,13 +109,24 @@ data-reject-lifetime="{{ $cookieConfig['reject_lifetime'] }}"
                             <span class="cookie-toggle-slider"></span>
                         </label>
                     </div>
-                    <p class="cookie-category-description">These remember your preferences like language or region.</p>
+                    <p>These remember your preferences like language or region.</p>
                 </div>
             </div>
         </div>
         <div class="cookie-preferences-modal-footer">
-            <button class="cookie-preferences-save primary-button">Save Preferences</button>
-            <button class="cookie-preferences-cancel secondary-button">Cancel</button>
+            <div class="cookie-preferences-modal-button">
+                <button class="cookie-consent-accept primary-button">
+                    Accept all
+                </button>
+                <button class="cookie-consent-reject primary-button">
+                    Reject all
+                </button>
+            </div>
+            <div>
+                <button class="cookie-preferences-save primary-button">
+                    Save Preferences
+                </button>
+            </div>
         </div>
     </div>
 </div>

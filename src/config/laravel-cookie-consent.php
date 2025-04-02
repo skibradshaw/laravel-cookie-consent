@@ -46,6 +46,17 @@ return [
     */
     'consent_modal_layout' => env('COOKIE_CONSENT_MODAL_LAYOUT', 'bar-inline'),
 
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Cookie Consent Preferences Modal Enable/Disable
+    |--------------------------------------------------------------------------
+    | This setting determines whether the cookie consent preferences modal should be displayed.
+    | Set this value to 'true' to show the preferences modal or 'false' to hide it.
+    | You can control this via the .env file using COOKIE_CONSENT_PREFERENCES_ENABLED.
+    */
+    'preferences_modal_enabled' => env('COOKIE_CONSENT_PREFERENCES_ENABLED', false),
+
     /*
     |--------------------------------------------------------------------------
     | Preferences Modal Layout

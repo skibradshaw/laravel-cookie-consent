@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     var consentRoot = document.querySelector('.cookie-consent-root');
-    var acceptButton = consentRoot ? consentRoot.querySelector('.cookie-consent-accept') : null;
-    var rejectButton = consentRoot ? consentRoot.querySelector('.cookie-consent-reject') : null;
+    var acceptButton = document.querySelector('.cookie-consent-accept');
+    var rejectButton = document.querySelector('.cookie-consent-reject');
 
     // Show the consent banner and handle interaction
     if (consentRoot) {
@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Reject all button click handler
     if (rejectButton) {
         rejectButton.addEventListener('click', function () {
+            console.log('ok');            
             setCookie('cookieConsent', 'rejected', consentRoot.getAttribute('data-reject-lifetime')); // Store for 1 day
             hideConsentBanner();
         });
@@ -45,6 +46,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.querySelector('html').classList.remove('cookie-disable-interaction');
             }
         }
+
+        hideModal();
     }
 
     // Function to set a cookie
@@ -70,9 +73,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return null;
     }
-});
 
-document.addEventListener('DOMContentLoaded', function() {
+    
     // Get elements
     const preferencesBtn = document.querySelector('.preferences-btn');
     const modal = document.querySelector('.cookie-preferences-modal');
@@ -157,10 +159,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Close modal when overlay, close button, or cancel button is clicked
     [modalOverlay, modalClose, modalCancel].forEach(el => {
-        el.addEventListener('click', function() {
-            hideModal();
-        });
+        if (el) { // Check if the element is not null
+            el.addEventListener('click', function() {
+                hideModal();
+            });
+        }
     });
+    
     
     // Save preferences when save button is clicked
     modalSave.addEventListener('click', function() {
