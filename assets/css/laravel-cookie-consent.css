@@ -26,7 +26,7 @@
     inset: 0;
     opacity: 1;
     position: fixed;
-    z-index: 0;
+    z-index: 900;
 }
 
 .cookie-consent-root {
@@ -99,6 +99,10 @@
     flex-direction: column;
 }
 
+.cookie-consent-content {
+    width: 100%;
+}
+
 .cookie-consent-content-title {
     font-size: 16px;
     font-weight: 600;
@@ -156,7 +160,7 @@
 }
 
 .cookie-consent-button-container button {
-    padding: 10px 25px;
+    padding: .5rem 1.25rem;
     border: none;
     border-radius: 5px;
     font-size: 14px;
@@ -410,7 +414,7 @@
 /* Modal Header */
 .cookie-preferences-modal-header {
     padding: 1em 1.4em;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #6c6c6c1c;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -425,7 +429,7 @@
 }
 
 .cookie-preferences-modal-close {
-    background: #eaeff2;
+    background: var(--cc-button-text-color);
     border: none;
     padding: 4px;
     cursor: pointer;
@@ -494,7 +498,7 @@
 
 .cookie-category {
     padding-bottom: 20px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #6c6c6c1c;
 }
 
 .cookie-category:last-child {
@@ -519,14 +523,14 @@
 /* Modal Footer */
 .cookie-preferences-modal-footer {
     padding: 16px 24px;
-    border-top: 1px solid #f0f0f0;
+    border-top: 1px solid #6c6c6c1c;
     display: flex;
     justify-content: space-between;
     gap: 12px;
     flex-shrink: 0;
 }
 
-.cookie-preferences-modal-button {
+.cookie-preferences-modal-button-group {
     display: flex;
     justify-content: space-between;
     gap: 12px;
@@ -534,9 +538,9 @@
 
 .primary-button {
     background-color: rgba(var(--cc-button-bg-color-rgb), var(--cc-button-bg-opacity, 1));
-    color: white;
+    color: var(--cc-button-text-color);
     border: none;
-    padding: 10px 20px;
+    padding: .5rem 1.25rem;
     border-radius: 6px;
     cursor: pointer;
     font-size: 0.9rem;
@@ -550,9 +554,8 @@
 }
 
 .secondary-button {
-    background-color: #f1f1f1;
-    border: 1px solid #ddd;
-    color: var(--cc-card-text-color);
+    background-color: rgba(var(--cc-button-bg-color-rgb), var(--cc-button-bg-opacity, 1));
+    color: var(--cc-button-text-color);
     padding: 10px 20px;
     border-radius: 6px;
     cursor: pointer;

@@ -74,56 +74,13 @@ class CookieConsent
     /**
      * Generate the HTML for the required scripts and initialize toast messages.
      *
-     * @return string The HTML script tags for the JavaScript.
+     * @return mixed The HTML script tags for the JavaScript.
      */
-    public function scripts(): string
+    public function scripts($options = []): mixed
     {
         $config = (array)$this->config->get('laravel-cookie-consent');
-        
+        $config = array_merge($config, $options);       
         return self::content(cookieConfig: $config);
-
-        $messages = $this->session->get('laravel-cookie-consent::messages');
-
-        if (!$messages) $messages = [];
-
-        $config = (array)$this->config->get('laravel-cookie-consent.options');
-
-        $script = '<script src="' . url('vendor/laravel-cookie-consent/assets/js/laravel-cookie-consent.js') . '"></script>';
-        $script .= '<script type="' . $this->jsType . '">';
-
-        // Output the config as a global JS object
-        $script .= 'window.CookieConsentConfig = ' . json_encode($config, JSON_UNESCAPED_SLASHES) . ';';
-
-        $script .= 'document.addEventListener("DOMContentLoaded", function() {';
-
-        $delay = 0; // Initial delay of 0ms
-
-        foreach ($messages as $message) {
-
-            if (count($message['options'])) {
-                $config = array_merge($config, $message['options']);
-            }
-
-//            if ($config) {
-//                $script .= 'toast.options = ' . json_encode($config) . ';';
-//            }
-
-            $description = addslashes($message['description']) ?: null;
-
-            // Add a delay for each message
-            $script .= 'setTimeout(function() {
-                CookieConsent.' . $message['type'] . '("' . addslashes($message['message']) . '", "' . $description . '", '. (isset($config['closeButton']) && $config['closeButton'] ? 'true' : 'false') .', "'. ($config['customBtnText'] ?? '') .'", "'. ($config['customBtnLink'] ?? '') .'");
-            }, ' . $delay . ');';
-
-            // Increase the delay for the next message (500ms for each)
-            $delay += 1000;
-        }
-
-        $script .= '});'; // End of DOMContentLoaded
-
-        $script .= '</script>';
-
-        return $script;
     }
 
     /**
