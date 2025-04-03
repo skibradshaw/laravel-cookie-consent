@@ -1,3 +1,5 @@
+"use strict";
+
 document.addEventListener('DOMContentLoaded', function () {
     // DOM Elements
     const consentRoot = document.querySelector('.cookie-consent-root');
@@ -34,6 +36,15 @@ document.addEventListener('DOMContentLoaded', function () {
             setAllPreferences(true); // Accept all categories
             hideConsentBanner();
             document.dispatchEvent(new CustomEvent('cookieConsentAccepted'));
+
+            // Check if function exists before calling
+            if (typeof loadCookieCategoriesEnabledServices === 'function') {
+                try {
+                    loadCookieCategoriesEnabledServices();
+                } catch (e) {
+                    console.info(e);
+                }
+            }
         });
     });
     
@@ -99,6 +110,20 @@ document.addEventListener('DOMContentLoaded', function () {
             setCookie(cookieConsentPrefix, 'custom', consentRoot?.getAttribute('data-cookie-lifetime') || 7);
             hideModal();
             document.dispatchEvent(new CustomEvent('cookiePreferencesSaved', { detail: preferences }));
+
+            // Action Accept
+            setCookie(cookieConsentPrefix, 'accepted', consentRoot?.getAttribute('data-cookie-lifetime') || 7);
+            hideConsentBanner();
+            document.dispatchEvent(new CustomEvent('cookieConsentAccepted'));
+
+            // Check if function exists before calling
+            if (typeof loadCookieCategoriesEnabledServices === 'function') {
+                try {
+                    loadCookieCategoriesEnabledServices();
+                } catch (e) {
+                    console.info(e);
+                }
+            }
         });
     }
     
@@ -150,6 +175,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return null;
     }
+
+    // Make them available globally
+    window.getCookie = getCookie;
+    window.getCookiePreferences = getCookiePreferences;
     
     function hideConsentBanner() {
         if (consentRoot) {
@@ -169,8 +198,3 @@ document.head.insertAdjacentHTML('beforeend', `
         }
     </style>
 `);
-
-document.addEventListener('DOMContentLoaded', function() {
-    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
-});

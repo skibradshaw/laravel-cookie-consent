@@ -15,6 +15,12 @@
     --cc-button-text-color: #161a1c;
 }
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 .cookie-disable-interaction body {
     height: auto !important;
     overflow: hidden !important;

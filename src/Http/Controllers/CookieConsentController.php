@@ -11,7 +11,7 @@ class CookieConsentController extends Controller
     {
         $script = <<<JS
         window.onload = function() {
-            console.log('Hi');
+            // console.log('Hi');
         };
         JS;
 

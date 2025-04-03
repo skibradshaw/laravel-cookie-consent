@@ -71,7 +71,7 @@ return [
      * @option bar - Simple bar at top or bottom
      * @option bar-inline - Compact inline bar
      */
-    'consent_modal_layout' => env('COOKIE_CONSENT_MODAL_LAYOUT', 'box-wide'),
+    'consent_modal_layout' => env('COOKIE_CONSENT_MODAL_LAYOUT', 'bar'),
 
     /**
      * Enable preferences modal
@@ -217,12 +217,14 @@ return [
         'analytics' => [
             'enabled' => env('COOKIE_CONSENT_ANALYTICS', false),
             'locked' => false,
+            'js_action' => 'loadGoogleAnalytics',
             'title' => 'Analytics Cookies',
             'description' => 'These cookies help us understand how visitors interact with our website.',
         ],
         'marketing' => [
             'enabled' => env('COOKIE_CONSENT_MARKETING', false),
             'locked' => false,
+            'js_action' => 'loadFacebookPixel',
             'title' => 'Marketing Cookies',
             'description' => 'These cookies are used for advertising and tracking purposes.',
         ],

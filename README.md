@@ -84,6 +84,7 @@ Include these components in your Blade templates:
            'necessary' => [
                'enabled' => true,
                'locked' => true,
+               'js_action' => 'loadGoogleAnalytics',
                'title' => 'Essential Cookies',
                'description' => 'These cookies are essential for the website to function properly.',
            ],
@@ -96,12 +97,14 @@ Include these components in your Blade templates:
            'marketing' => [
                'enabled' => env('COOKIE_CONSENT_MARKETING', false),
                'locked' => false,
+               'js_action' => 'loadFacebookPixel',
                'title' => 'Marketing Cookies',
                'description' => 'These cookies are used for advertising and tracking purposes.',
            ],
            'preferences' => [
                'enabled' => env('COOKIE_CONSENT_PREFERENCES', false),
                'locked' => false,
+               'js_action' => 'loadPreferencesFunc',
                'title' => 'Preferences Cookies',
                'description' => 'These cookies allow the website to remember user preferences.',
            ],
@@ -143,6 +146,36 @@ Edit `config/cookie-consent.php` to modify:
 - Visual styles
 - Text content
 - Category settings
+
+### Example service loader (replace with your actual implementation)
+
+```javascript
+function loadGoogleAnalytics() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR_GA_ID');
+
+    // Load the GA script
+    const script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID';
+    script.async = true;
+    document.head.appendChild(script);
+}
+
+function loadFacebookPixel() {
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+}
+```
 
 ## Resources
 
