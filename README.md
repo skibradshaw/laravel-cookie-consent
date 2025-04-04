@@ -162,6 +162,9 @@ Edit `config/cookie-consent.php` to modify:
 
 ```javascript
 function loadGoogleAnalytics() {
+    // Please put your GA script in loadGoogleAnalytics()
+    // You can define function name from - {!! CookieConsent::scripts() !!}
+
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -175,6 +178,9 @@ function loadGoogleAnalytics() {
 }
 
 function loadFacebookPixel() {
+    // Please put your marketing script in loadFacebookPixel()
+    // You can define function name from - {!! CookieConsent::scripts() !!}
+
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
