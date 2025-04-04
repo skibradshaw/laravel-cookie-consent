@@ -194,23 +194,25 @@ function loadFacebookPixel() {
 }
 ```
 
-## Resources
+### 🎯 Get Started Today!
+Experience the magic of CookieConsent and enhance your Laravel applications with Cookie Consent.
 
-🔗 [GitHub Repository](https://github.com/devrabiul/laravel-cookie-consent)  
-🔗 [Documentation Website](https://laravel-cookie-consent.rixetbd.com)  
-🔗 [Packagist Page](https://packagist.org/packages/devrabiul/laravel-cookie-consent)
+🔗 **GitHub:** [Laravel Cookie Consent](https://github.com/devrabiul/laravel-cookie-consent)  
+🔗 **Packagist:** [https://packagist.org/packages/devrabiul/laravel-cookie-consent](https://packagist.org/packages/devrabiul/laravel-cookie-consent)  
 
 ## Contributing
 
-We welcome contributions! Please:
+We welcome contributions to ToastMagic! If you would like to contribute, please fork the repository and submit a pull request. For any issues or feature requests, please open an issue on GitHub.
+
+Please:
 1. Fork the repository
 2. Create your feature branch
 3. Submit a pull request
 
 ## License
 
-MIT License - See [LICENSE.md](LICENSE.md) for details.
+This package is open-sourced software licensed under the [MIT license](LICENSE.md).
 
 ## Contact
 
-For support inquiries: [devrabiul@gmail.com](mailto:devrabiul@gmail.com)
+For support or inquiries, please reach out to us at [Send Mail](mailto:devrabiul@gmail.com).
