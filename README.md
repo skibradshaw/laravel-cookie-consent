@@ -202,7 +202,7 @@ Experience the magic of CookieConsent and enhance your Laravel applications with
 
 ## Contributing
 
-We welcome contributions to ToastMagic! If you would like to contribute, please fork the repository and submit a pull request. For any issues or feature requests, please open an issue on GitHub.
+We welcome contributions to CookieConsent! If you would like to contribute, please fork the repository and submit a pull request. For any issues or feature requests, please open an issue on GitHub.
 
 Please:
 1. Fork the repository
