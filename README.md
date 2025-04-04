@@ -14,9 +14,20 @@ A GDPR-compliant solution offering enterprise-grade compliance with fully custom
 
 ## Installation
 
+To get started with Cookie Consent, follow these simple steps:
+
+1. Install the package via Composer:
+
 ```bash
 composer require devrabiul/laravel-cookie-consent
 ```
+
+2. Publish the package resources by running:
+
+```bash
+php artisan vendor:publish --provider="Devrabiul\CookieConsent\CookieConsentServiceProvider"
+```
+
 
 ## Basic Usage
 
