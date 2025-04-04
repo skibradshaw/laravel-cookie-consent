@@ -14,16 +14,16 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Devrabiul\\LaravelCookieConsent\\": "src/"
+            "Devrabiul\\CookieConsent\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Devrabiul\\LaravelCookieConsent\\CookieConsentServiceProvider"
+                "Devrabiul\\CookieConsent\\CookieConsentServiceProvider"
             ],
             "aliases": {
-                "CookieConsent": "Devrabiul\\LaravelCookieConsent\\Facades\\CookieConsent"
+                "CookieConsent": "Devrabiul\\CookieConsent\\Facades\\CookieConsent"
             }
         }
     },
