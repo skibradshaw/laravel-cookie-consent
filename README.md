@@ -120,6 +120,8 @@ Include these components in your Blade templates:
                'description' => 'These cookies allow the website to remember user preferences.',
            ],
        ]),
+       'cookie_title' => 'Cookie Disclaimer',
+       'cookie_description' => 'This website uses cookies to enhance your browsing experience, analyze site traffic, and personalize content. By continuing to use this site, you consent to our use of cookies.',
        'cookie_modal_title' => 'Cookie Preferences',
        'cookie_modal_intro' => 'You can customize your cookie preferences below.',
        'cookie_accept_btn_text' => 'Accept All',
