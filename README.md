@@ -7,6 +7,8 @@ A GDPR-compliant solution offering enterprise-grade compliance with fully custom
 ![GitHub license](https://img.shields.io/github/license/devrabiul/laravel-cookie-consent)
 ![GitHub Repo stars](https://img.shields.io/github/stars/devrabiul/laravel-cookie-consent?style=social)
 
+![laravel-cookie-consent](https://raw.githubusercontent.com/devrabiul/laravel-cookie-consent/refs/heads/main/assets/laravel-cookie-consent.png)
+
 ## Features
 
 - 🔥 **One-Click Implementation** – Simple installation via Composer with auto-loaded assets
