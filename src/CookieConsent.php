@@ -2,6 +2,7 @@
 
 namespace Devrabiul\CookieConsent;
 
+use Illuminate\Session\SessionManager as Session;
 use Illuminate\Config\Repository as Config;
 
 /**
@@ -11,6 +12,13 @@ use Illuminate\Config\Repository as Config;
  */
 class CookieConsent
 {
+    /**
+     * The session manager.
+     *
+     * @var \Illuminate\Session\SessionManager
+     */
+    protected $session;
+
     /**
      * The Config handler instance.
      *
@@ -26,12 +34,14 @@ class CookieConsent
     protected string $jsType = 'text/javascript';
 
     /**
-     * Create a new CookieConsent instance.
-     *
-     * @param Config $config The configuration repository instance.
-     */
-    public function __construct(Config $config)
+    * CookieConsent constructor.
+    *
+    * @param Session $session The session manager instance.
+    * @param Config $config The configuration repository instance.
+    */
+    function __construct(Session $session, Config $config)
     {
+        $this->session = $session;
         $this->config = $config;
     }
 
