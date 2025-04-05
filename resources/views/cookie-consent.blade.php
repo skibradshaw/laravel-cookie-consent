@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    @if (count($cookieConfig['policy_links']) > 0)
+    @if (isset($cookieConfig['policy_links']) && count($cookieConfig['policy_links']) > 0)
     <div class="cookie-consent-links-container">
         <ul class="cookie-consent-links-list">
             @foreach ($cookieConfig['policy_links'] as $policyLinks)
@@ -113,7 +113,7 @@
 </div>
 
 
-<script src="{{ url('vendor/laravel-cookie-consent/assets/js/laravel-cookie-consent.js') }}"></script>
+<script src="{{ url('vendor/laravel-cookie-consent/assets/js/script.js') }}"></script>
 <script src="{{ route('laravel-cookie-consent.script-utils') }}"></script>
 
 <script type="text/javascript">

@@ -2,39 +2,21 @@
 
 namespace Devrabiul\CookieConsent;
 
-use Illuminate\Session\SessionManager as Session;
 use Illuminate\Config\Repository as Config;
-use Illuminate\Support\MessageBag;
 
 /**
  * Class CookieConsent
  *
- * This class handles the management of toast notifications in a Laravel application.
- * It provides methods to add flash messages to the session and render the necessary
- * styles and scripts for displaying these messages.
+ * Handles the display and management of cookie consent UI components in a Laravel application.
  */
 class CookieConsent
 {
     /**
-     * The session manager.
-     *
-     * @var \Illuminate\Session\SessionManager
-     */
-    protected $session;
-
-    /**
-     * The Config Handler.
+     * The Config handler instance.
      *
      * @var \Illuminate\Contracts\Config\Repository
      */
     protected $config;
-
-    /**
-     * The messages stored in the session.
-     *
-     * @var array
-     */
-    protected array $messages = [];
 
     /**
      * The JavaScript type for script tags.
@@ -44,47 +26,52 @@ class CookieConsent
     protected string $jsType = 'text/javascript';
 
     /**
-     * CookieConsent constructor.
+     * Create a new CookieConsent instance.
      *
-     * @param Session $session The session manager instance.
      * @param Config $config The configuration repository instance.
      */
-    function __construct(Session $session, Config $config)
+    public function __construct(Config $config)
     {
-        $this->session = $session;
         $this->config = $config;
     }
 
     /**
-     * Generate the HTML for the required styles.
+     * Generate the HTML for the required stylesheet.
      *
      * @return string The HTML link tag for the stylesheet.
      */
     public function styles(): string
     {
-        $style = '<link rel="stylesheet" href="' . url('vendor/laravel-cookie-consent/assets/css/laravel-cookie-consent.css') . '">';
+        $style = '<link rel="stylesheet" type="text/css" href="' . url('vendor/laravel-cookie-consent/assets/css/style.css') . '">';
         return $style;
     }
 
+    /**
+     * Render the cookie consent view with the given configuration.
+     *
+     * @param array $cookieConfig Optional cookie configuration overrides.
+     * @return \Illuminate\Contracts\View\View The cookie consent view.
+     */
     public function content(array $cookieConfig = [])
     {
         return view('laravel-cookie-consent::cookie-consent', compact('cookieConfig'));
     }
 
     /**
-     * Generate the HTML for the required scripts and initialize toast messages.
+     * Generate the HTML for the required JavaScript with optional configuration overrides.
      *
-     * @return mixed The HTML script tags for the JavaScript.
+     * @param array $options Optional configuration overrides.
+     * @return \Illuminate\Contracts\View\View The cookie consent script view.
      */
     public function scripts($options = []): mixed
     {
         $config = (array)$this->config->get('laravel-cookie-consent');
-        $config = array_merge($config, $options);       
+        $config = array_merge($config, $options);
         return self::content(cookieConfig: $config);
     }
 
     /**
-     * Set js type to module for using vite
+     * Set the JavaScript type to 'module', used for Vite-based builds.
      *
      * @return void
      */
