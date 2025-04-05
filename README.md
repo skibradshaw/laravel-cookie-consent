@@ -2,6 +2,11 @@
 
 A GDPR-compliant solution offering enterprise-grade compliance with fully customizable cookie banners for Laravel applications. Simplifies regulatory requirements while maintaining excellent user experience and complete customization capabilities.
 
+[![Latest Stable Version](https://poser.pugx.org/devrabiul/laravel-cookie-consent/v/stable)](https://packagist.org/packages/devrabiul/laravel-cookie-consent)
+[![Total Downloads](https://poser.pugx.org/devrabiul/laravel-cookie-consent/downloads)](https://packagist.org/packages/devrabiul/laravel-cookie-consent)
+![GitHub license](https://img.shields.io/github/license/devrabiul/laravel-cookie-consent)
+![GitHub Repo stars](https://img.shields.io/github/stars/devrabiul/laravel-cookie-consent?style=social)
+
 ## Features
 
 - 🔥 **One-Click Implementation** – Simple installation via Composer with auto-loaded assets
