@@ -140,6 +140,17 @@ Include these components in your Blade templates:
 
 ## Layout Options
 
+### Config Status Control
+
+```bash
+COOKIE_CONSENT_ENABLED=true
+COOKIE_CONSENT_PREFERENCES_ENABLED=true
+
+COOKIE_CONSENT_ANALYTICS=true
+COOKIE_CONSENT_MARKETING=true
+COOKIE_CONSENT_PREFERENCES=true
+```
+
 ### Consent Modal Styles
 - **`box`** - Compact floating dialog
 - **`box-inline`** - Inline positioned box

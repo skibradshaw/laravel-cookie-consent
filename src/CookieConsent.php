@@ -73,10 +73,13 @@ class CookieConsent
      * @param array $options Optional configuration overrides.
      * @return \Illuminate\Contracts\View\View The cookie consent script view.
      */
-    public function scripts($options = []): mixed
+    public function scripts(array $options = []): mixed
     {
         $config = (array)$this->config->get('laravel-cookie-consent');
         $config = array_merge($config, $options);
+        if (isset($config['enabled']) && ($config['enabled'] === false || $config['enabled'] === 'false')) {
+            return '';
+        }
         return self::content(cookieConfig: $config);
     }
 
