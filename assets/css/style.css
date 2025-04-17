@@ -75,7 +75,7 @@
 }
 
 .cookie-consent-hide {
-    --cookie-consent-bottom: -110%;
+    --cookie-consent-bottom: -150%;
 }
 
 @media screen and (max-width: 640px) {
