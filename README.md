@@ -138,6 +138,13 @@ Include these components in your Blade templates:
 </html>
 ```
 
+### Enable Dark Mode
+You need to use theme="dark" in your body tag.
+
+```html
+<body theme="dark">
+```
+
 ## Layout Options
 
 ### Config Status Control
