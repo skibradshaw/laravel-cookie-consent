@@ -18,6 +18,8 @@ capabilities.
 - 🛡 **Granular Consent Control** – Category-level cookie management (necessary/analytics/marketing)
 - 📦 **Complete Customization** – Override every color, text, and layout via config
 - 📱 **Responsive Design** – Perfectly adapts to all devices (mobile/tablet/desktop)
+- 🧩 **No Frontend Dependencies** – No jQuery, Bootstrap, or Tailwind required — works everywhere effortlessly
+
 
 ## Installation
 
@@ -142,13 +144,23 @@ Include these components in your Blade templates:
 </html>
 ```
 
-### Enable Dark Mode
 
-You need to use theme="dark" in your body tag.
+### 🌙 Enable Dark Mode
+
+Add `theme="dark"` to your `<body>` tag to automatically enable dark mode.
 
 ```html
-
 <body theme="dark">
+```
+
+---
+
+### 🌐 Enable RTL Mode
+
+Add `dir="rtl"` to your `<body>` tag to enable right-to-left layout for RTL languages.
+
+```html
+<body dir="rtl">
 ```
 
 ## Layout Options
