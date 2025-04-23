@@ -1,7 +1,5 @@
 <?php
 
-use Devrabiul\CookieConsent\CookieConsent;
-
 /**
  * Cookie Consent Configuration
  *
@@ -129,56 +127,56 @@ return [
      *
      * @default "Cookie Disclaimer"
      */
-    'cookie_title' => CookieConsent::translate("Cookie Disclaimer"),
+    'cookie_title' => "Cookie Disclaimer",
 
     /**
      * Cookie banner description text
      *
      * @default "This website uses cookies to enhance your browsing experience, analyze site traffic, and personalize content. By continuing to use this site, you consent to our use of cookies."
      */
-    'cookie_description' => CookieConsent::translate("This website uses cookies to enhance your browsing experience, analyze site traffic, and personalize content. By continuing to use this site, you consent to our use of cookies."),
+    'cookie_description' => "This website uses cookies to enhance your browsing experience, analyze site traffic, and personalize content. By continuing to use this site, you consent to our use of cookies.",
 
     /**
      * Accept all cookies button text
      *
      * @default 'Accept all'
      */
-    'cookie_accept_btn_text' => CookieConsent::translate('Accept all'),
+    'cookie_accept_btn_text' => 'Accept all',
 
     /**
      * Reject all cookies button text
      *
      * @default 'Reject all'
      */
-    'cookie_reject_btn_text' => CookieConsent::translate('Reject all'),
+    'cookie_reject_btn_text' => 'Reject all',
 
     /**
      * Manage preferences button text
      *
      * @default 'Manage preferences'
      */
-    'cookie_preferences_btn_text' => CookieConsent::translate('Manage preferences'),
+    'cookie_preferences_btn_text' => 'Manage preferences',
 
     /**
      * Save preferences button text
      *
      * @default 'Save preferences'
      */
-    'cookie_preferences_save_text' => CookieConsent::translate('Save preferences'),
+    'cookie_preferences_save_text' => 'Save preferences',
 
     /**
      * Preferences modal title text
      *
      * @default 'Cookie Preferences'
      */
-    'cookie_modal_title' => CookieConsent::translate('Cookie Preferences'),
+    'cookie_modal_title' => 'Cookie Preferences',
 
     /**
      * Preferences modal introduction text
      *
      * @default 'You can customize your cookie preferences below.'
      */
-    'cookie_modal_intro' => CookieConsent::translate('You can customize your cookie preferences below.'),
+    'cookie_modal_intro' => 'You can customize your cookie preferences below.',
 
     /**
      * Cookie categories configuration
@@ -194,28 +192,28 @@ return [
         'necessary' => [
             'enabled' => true,
             'locked' => true,
-            'title' => CookieConsent::translate('Essential Cookies'),
-            'description' => CookieConsent::translate('These cookies are essential for the website to function properly.'),
+            'title' => 'Essential Cookies',
+            'description' => 'These cookies are essential for the website to function properly.',
         ],
         'analytics' => [
             'enabled' => env('COOKIE_CONSENT_ANALYTICS', false),
             'locked' => false,
             'js_action' => 'loadGoogleAnalytics',
-            'title' => CookieConsent::translate('Analytics Cookies'),
-            'description' => CookieConsent::translate('These cookies help us understand how visitors interact with our website.'),
+            'title' => 'Analytics Cookies',
+            'description' => 'These cookies help us understand how visitors interact with our website.',
         ],
         'marketing' => [
             'enabled' => env('COOKIE_CONSENT_MARKETING', false),
             'locked' => false,
             'js_action' => 'loadFacebookPixel',
-            'title' => CookieConsent::translate('Marketing Cookies'),
-            'description' => CookieConsent::translate('These cookies are used for advertising and tracking purposes.'),
+            'title' => 'Marketing Cookies',
+            'description' => 'These cookies are used for advertising and tracking purposes.',
         ],
         'preferences' => [
             'enabled' => env('COOKIE_CONSENT_PREFERENCES', false),
             'locked' => false,
-            'title' => CookieConsent::translate('Preferences Cookies'),
-            'description' => CookieConsent::translate('These cookies allow the website to remember user preferences.'),
+            'title' => 'Preferences Cookies',
+            'description' => 'These cookies allow the website to remember user preferences.',
         ],
     ],
 
@@ -229,11 +227,11 @@ return [
      */
     'policy_links' => [
         [
-            'text' => CookieConsent::translate('Privacy Policy'),
+            'text' => 'Privacy Policy',
             'link' => env('COOKIE_CONSENT_PRIVACY_POLICY_URL', '') ?? url('privacy-policy')
         ],
         [
-            'text' => CookieConsent::translate('Terms and Conditions'),
+            'text' => 'Terms and Conditions',
             'link' => env('COOKIE_CONSENT_TERMS_URL', '') ?? url('terms-and-conditions')
         ],
     ],
