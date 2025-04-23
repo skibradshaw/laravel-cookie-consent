@@ -1,7 +1,7 @@
 # Security Policy
 
 ## Supported Versions
-We actively maintain the latest major version of Laravel Toaster Magic. Security updates will only be provided for the latest release.
+We actively maintain the latest major version of Laravel Cookie Consent. Security updates will only be provided for the latest release.
 
 | Version | Supported          |
 |---------|------------------|
@@ -9,9 +9,9 @@ We actively maintain the latest major version of Laravel Toaster Magic. Security
 | Older   | ❌ No Support    |
 
 ## Reporting a Vulnerability
-If you discover a security vulnerability in Laravel Toaster Magic, please **DO NOT** disclose it publicly. Instead, report it confidentially by following these steps:
+If you discover a security vulnerability in Laravel Cookie Consent, please **DO NOT** disclose it publicly. Instead, report it confidentially by following these steps:
 
-1. **Email the Maintainer**: Send a detailed report to [devrabiul@gmail.com] with the subject **[Security Issue] Laravel Toaster Magic**.
+1. **Email the Maintainer**: Send a detailed report to [devrabiul@gmail.com] with the subject **[Security Issue] Laravel Cookie Consent**.
 2. **Include Details**:
    - Affected version(s)
    - Steps to reproduce the issue
@@ -26,4 +26,4 @@ To keep your application secure:
 - Use Composer to manage dependencies securely.
 - Follow Laravel's security best practices.
 
-We appreciate your help in making Laravel Toaster Magic more secure! 🔒
+We appreciate your help in making Laravel Cookie Consent more secure! 🔒

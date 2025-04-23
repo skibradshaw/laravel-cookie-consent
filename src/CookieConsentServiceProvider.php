@@ -2,20 +2,21 @@
 
 namespace Devrabiul\CookieConsent;
 
+use Exception;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Response;
 
 class CookieConsentServiceProvider extends ServiceProvider
 {
-   /**
+    /**
      * Bootstrap the application services.
      *
      * This method is called after all other service providers have been registered.
      * It is used to perform any actions required to bootstrap the application services.
      *
      * @return void
-     * @throws \Exception If there is an error during bootstrapping.
+     * @throws Exception If there is an error during bootstrapping.
      */
     public function boot(): void
     {
@@ -32,10 +33,11 @@ class CookieConsentServiceProvider extends ServiceProvider
      * This method registers the configuration file for publishing to the application's config directory.
      *
      * @return void
-     * @throws \Exception If there is an error during publishing.
+     * @throws Exception If there is an error during publishing.
      */
     private function registerPublishing(): void
     {
+        // Normal publish
         $this->publishes([
             __DIR__ . '/config/laravel-cookie-consent.php' => config_path('laravel-cookie-consent.php'),
         ]);
@@ -55,7 +57,7 @@ class CookieConsentServiceProvider extends ServiceProvider
      * It is used to register the CookieConsent service and load the configuration.
      *
      * @return void
-     * @throws \Exception If the configuration file cannot be loaded.
+     * @throws Exception If the configuration file cannot be loaded.
      */
     public function register(): void
     {
@@ -77,7 +79,7 @@ class CookieConsentServiceProvider extends ServiceProvider
      * This method returns an array of services that this provider offers.
      *
      * @return array
-     * @throws \Exception If there is an error retrieving the services.
+     * @throws Exception If there is an error retrieving the services.
      */
     public function provides(): array
     {
@@ -131,5 +133,5 @@ class CookieConsentServiceProvider extends ServiceProvider
 
             abort(404);
         })->where('path', '.*');
-    } 
+    }
 }

@@ -1,6 +1,8 @@
 # Laravel Cookie Consent
 
-A GDPR-compliant solution offering enterprise-grade compliance with fully customizable cookie banners for Laravel applications. Simplifies regulatory requirements while maintaining excellent user experience and complete customization capabilities.
+A GDPR-compliant solution offering enterprise-grade compliance with fully customizable cookie banners for Laravel
+applications. Simplifies regulatory requirements while maintaining excellent user experience and complete customization
+capabilities.
 
 [![Latest Stable Version](https://poser.pugx.org/devrabiul/laravel-cookie-consent/v/stable)](https://packagist.org/packages/devrabiul/laravel-cookie-consent)
 [![Total Downloads](https://poser.pugx.org/devrabiul/laravel-cookie-consent/downloads)](https://packagist.org/packages/devrabiul/laravel-cookie-consent)
@@ -27,23 +29,30 @@ To get started with Cookie Consent, follow these simple steps:
 composer require devrabiul/laravel-cookie-consent
 ```
 
-2. Publish the package resources by running:
+2. Publish the package resources by running: (Normal publish)
 
 ```bash
 php artisan vendor:publish --provider="Devrabiul\CookieConsent\CookieConsentServiceProvider"
 ```
 
+3. Or Publish the package resources by running: (Force publish - deletes old config and publishes new one):
+
+```bash
+php artisan vendor:publish --provider="Devrabiul\CookieConsent\CookieConsentServiceProvider" --tag=laravel-cookie-consent-force
+```
 
 ## Basic Usage
 
 Include these components in your Blade templates:
 
 1. Add styles in the `<head>` section:
+
 ```php
 {!! CookieConsent::styles() !!}
 ```
 
 2. Add scripts before closing `</body>`:
+
 ```php
 {!! CookieConsent::scripts() !!}
 ```
@@ -84,64 +93,67 @@ Include these components in your Blade templates:
     <!-- Your content -->
     
     {!! CookieConsent::scripts(options: [
-       'cookie_lifetime' => config('laravel-cookie-consent.cookie_lifetime', 7),
-       'reject_lifetime' => config('laravel-cookie-consent.reject_lifetime', 1),
-       'disable_page_interaction' => config('laravel-cookie-consent.disable_page_interaction', true),
-       'preferences_modal_enabled' => config('laravel-cookie-consent.preferences_modal_enabled', true),
-       'consent_modal_layout' => config('laravel-cookie-consent.consent_modal_layout', 'bar-inline'),
-       'flip_button' => config('laravel-cookie-consent.flip_button', true),
-       'theme' => config('laravel-cookie-consent.theme', 'default'),
-       'cookie_prefix' => config('laravel-cookie-consent.cookie_prefix', 'Laravel_App'),
-       'policy_links' => config('laravel-cookie-consent.policy_links', [
-           ['text' => 'Privacy Policy', 'link' => url('privacy-policy')],
-           ['text' => 'Terms & Conditions', 'link' => url('terms-and-conditions')],
-       ]),
-       'cookie_categories' => config('laravel-cookie-consent.cookie_categories', [
-           'necessary' => [
-               'enabled' => true,
-               'locked' => true,
-               'js_action' => 'loadGoogleAnalytics',
-               'title' => 'Essential Cookies',
-               'description' => 'These cookies are essential for the website to function properly.',
-           ],
-           'analytics' => [
-               'enabled' => env('COOKIE_CONSENT_ANALYTICS', false),
-               'locked' => false,
-               'title' => 'Analytics Cookies',
-               'description' => 'These cookies help us understand how visitors interact with our website.',
-           ],
-           'marketing' => [
-               'enabled' => env('COOKIE_CONSENT_MARKETING', false),
-               'locked' => false,
-               'js_action' => 'loadFacebookPixel',
-               'title' => 'Marketing Cookies',
-               'description' => 'These cookies are used for advertising and tracking purposes.',
-           ],
-           'preferences' => [
-               'enabled' => env('COOKIE_CONSENT_PREFERENCES', false),
-               'locked' => false,
-               'js_action' => 'loadPreferencesFunc',
-               'title' => 'Preferences Cookies',
-               'description' => 'These cookies allow the website to remember user preferences.',
-           ],
-       ]),
-       'cookie_title' => 'Cookie Disclaimer',
-       'cookie_description' => 'This website uses cookies to enhance your browsing experience, analyze site traffic, and personalize content. By continuing to use this site, you consent to our use of cookies.',
-       'cookie_modal_title' => 'Cookie Preferences',
-       'cookie_modal_intro' => 'You can customize your cookie preferences below.',
-       'cookie_accept_btn_text' => 'Accept All',
-       'cookie_reject_btn_text' => 'Reject All',
-       'cookie_preferences_btn_text' => 'Manage Preferences',
-       'cookie_preferences_save_text' => 'Save Preferences',
-   ]) !!}
+        'cookie_lifetime' => config('laravel-cookie-consent.cookie_lifetime', 7),
+        'reject_lifetime' => config('laravel-cookie-consent.reject_lifetime', 1),
+        'disable_page_interaction' => config('laravel-cookie-consent.disable_page_interaction', true),
+        'preferences_modal_enabled' => config('laravel-cookie-consent.preferences_modal_enabled', true),
+        'consent_modal_layout' => config('laravel-cookie-consent.consent_modal_layout', 'bar-inline'),
+        'flip_button' => config('laravel-cookie-consent.flip_button', true),
+        'theme' => config('laravel-cookie-consent.theme', 'default'),
+        'cookie_prefix' => config('laravel-cookie-consent.cookie_prefix', 'Laravel_App'),
+        'policy_links' => config('laravel-cookie-consent.policy_links', [
+            ['text' => CookieConsent::translate('Privacy Policy'), 'link' => url('privacy-policy')],
+            ['text' => CookieConsent::translate('Terms & Conditions'), 'link' => url('terms-and-conditions')],
+        ]),
+        'cookie_categories' => config('laravel-cookie-consent.cookie_categories', [
+            'necessary' => [
+                'enabled' => true,
+                'locked' => true,
+                'js_action' => 'loadGoogleAnalytics',
+                'title' => CookieConsent::translate('Essential Cookies'),
+                'description' => CookieConsent::translate('These cookies are essential for the website to function properly.'),
+            ],
+            'analytics' => [
+                'enabled' => env('COOKIE_CONSENT_ANALYTICS', false),
+                'locked' => false,
+                'title' => CookieConsent::translate('Analytics Cookies'),
+                'description' => CookieConsent::translate('These cookies help us understand how visitors interact with our website.'),
+            ],
+            'marketing' => [
+                'enabled' => env('COOKIE_CONSENT_MARKETING', false),
+                'locked' => false,
+                'js_action' => 'loadFacebookPixel',
+                'title' => CookieConsent::translate('Marketing Cookies'),
+                'description' => CookieConsent::translate('These cookies are used for advertising and tracking purposes.'),
+            ],
+            'preferences' => [
+                'enabled' => env('COOKIE_CONSENT_PREFERENCES', false),
+                'locked' => false,
+                'js_action' => 'loadPreferencesFunc',
+                'title' => CookieConsent::translate('Preferences Cookies'),
+                'description' => CookieConsent::translate('These cookies allow the website to remember user preferences.'),
+            ],
+        ]),
+        'cookie_title' => CookieConsent::translate('Cookie Disclaimer'),
+        'cookie_description' => CookieConsent::translate('This website uses cookies to enhance your browsing experience, analyze site traffic, and personalize content. By continuing to use this site, you consent to our use of cookies.'),
+        'cookie_modal_title' => CookieConsent::translate('Cookie Preferences'),
+        'cookie_modal_intro' => CookieConsent::translate('You can customize your cookie preferences below.'),
+        'cookie_accept_btn_text' => CookieConsent::translate('Accept All'),
+        'cookie_reject_btn_text' => CookieConsent::translate('Reject All'),
+        'cookie_preferences_btn_text' => CookieConsent::translate('Manage Preferences'),
+        'cookie_preferences_save_text' => CookieConsent::translate('Save Preferences'),
+    ]) !!}
+
 </body>
 </html>
 ```
 
 ### Enable Dark Mode
+
 You need to use theme="dark" in your body tag.
 
 ```html
+
 <body theme="dark">
 ```
 
@@ -159,6 +171,7 @@ COOKIE_CONSENT_PREFERENCES=true
 ```
 
 ### Consent Modal Styles
+
 - **`box`** - Compact floating dialog
 - **`box-inline`** - Inline positioned box
 - **`box-wide`** - Expanded floating dialog
@@ -170,6 +183,7 @@ COOKIE_CONSENT_PREFERENCES=true
 *Default: `box-wide`*
 
 ### Preferences Modal Styles
+
 - **`bar`** - Full-width layout
 - **`box`** - Centered popup
 
@@ -178,6 +192,7 @@ COOKIE_CONSENT_PREFERENCES=true
 ## Configuration
 
 Edit `config/cookie-consent.php` to modify:
+
 - Cookie lifetimes
 - Visual styles
 - Text content
@@ -191,7 +206,11 @@ function loadGoogleAnalytics() {
     // You can define function name from - {!! CookieConsent::scripts() !!}
 
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
     gtag('config', 'YOUR_GA_ID');
 
@@ -206,30 +225,44 @@ function loadFacebookPixel() {
     // Please put your marketing script in loadFacebookPixel()
     // You can define function name from - {!! CookieConsent::scripts() !!}
 
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+    !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+            n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', 'YOUR_PIXEL_ID');
     fbq('track', 'PageView');
 }
 ```
 
 ### 🎯 Get Started Today!
+
 Experience the magic of CookieConsent and enhance your Laravel applications with Cookie Consent.
 
 🔗 **GitHub:** [Laravel Cookie Consent](https://github.com/devrabiul/laravel-cookie-consent)  
-🔗 **Packagist:** [https://packagist.org/packages/devrabiul/laravel-cookie-consent](https://packagist.org/packages/devrabiul/laravel-cookie-consent)  
+🔗 **Packagist:
+** [https://packagist.org/packages/devrabiul/laravel-cookie-consent](https://packagist.org/packages/devrabiul/laravel-cookie-consent)
 
 ## Contributing
 
-We welcome contributions to CookieConsent! If you would like to contribute, please fork the repository and submit a pull request. For any issues or feature requests, please open an issue on GitHub.
+We welcome contributions to CookieConsent! If you would like to contribute, please fork the repository and submit a pull
+request. For any issues or feature requests, please open an issue on GitHub.
 
 Please:
+
 1. Fork the repository
 2. Create your feature branch
 3. Submit a pull request

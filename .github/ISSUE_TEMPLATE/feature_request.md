@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea or enhancement for Laravel Toaster Magic
+about: Suggest an idea or enhancement for Laravel Cookie Consent
 title: ''
 labels: enhancement
 assignees: ''

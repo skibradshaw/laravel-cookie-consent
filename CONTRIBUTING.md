@@ -1,14 +1,14 @@
-# Contributing to Laravel Toaster Magic
+# Contributing to Laravel Cookie Consent
 
-Thank you for considering contributing to Laravel Toaster Magic! Your contributions help improve the package and make it more useful for the Laravel community.
+Thank you for considering contributing to Laravel Cookie Consent! Your contributions help improve the package and make it more useful for the Laravel community.
 
 ## How to Contribute
 
 ### 1. Fork and Clone the Repository
 First, fork the repository on GitHub and then clone it to your local machine:
 ```sh
-git clone https://github.com/your-username/laravel-toaster-magic.git
-cd laravel-toaster-magic
+git clone https://github.com/your-username/laravel-cookie-consent.git
+cd laravel-cookie-consent
 ```
 
 ### 2. Install Dependencies
@@ -53,7 +53,7 @@ Then, create a pull request (PR) from your branch to the `main` branch in the or
 - Once approved, it will be merged into the main branch.
 
 ## Reporting Issues
-If you encounter any issues, please create a [GitHub issue](https://github.com/devrabiul/laravel-toaster-magic/issues) with a clear description of the problem and steps to reproduce it.
+If you encounter any issues, please create a [GitHub issue](https://github.com/devrabiul/laravel-cookie-consent/issues) with a clear description of the problem and steps to reproduce it.
 
 ## Code of Conduct
 By participating in this project, you agree to follow our [Code of Conduct](CODE_OF_CONDUCT.md).
