@@ -35,12 +35,6 @@ composer require devrabiul/laravel-cookie-consent
 php artisan vendor:publish --provider="Devrabiul\CookieConsent\CookieConsentServiceProvider"
 ```
 
-3. Or Publish the package resources by running: (Force publish - deletes old config and publishes new one):
-
-```bash
-php artisan vendor:publish --provider="Devrabiul\CookieConsent\CookieConsentServiceProvider" --tag=laravel-cookie-consent-force
-```
-
 ## Basic Usage
 
 Include these components in your Blade templates:
