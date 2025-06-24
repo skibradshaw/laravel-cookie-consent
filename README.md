@@ -7,7 +7,7 @@ capabilities.
 [![Latest Stable Version](https://poser.pugx.org/devrabiul/laravel-cookie-consent/v/stable)](https://packagist.org/packages/devrabiul/laravel-cookie-consent)
 [![Total Downloads](https://poser.pugx.org/devrabiul/laravel-cookie-consent/downloads)](https://packagist.org/packages/devrabiul/laravel-cookie-consent)
 ![GitHub license](https://img.shields.io/github/license/devrabiul/laravel-cookie-consent)
-[![Buy us a tree](https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-lightgreen)](https://plant.treeware.earth/laravel-cookie-consent)
+[![Buy us a tree](https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-lightgreen)](https://plant.treeware.earth/devrabiul/laravel-cookie-consent)
 ![GitHub Repo stars](https://img.shields.io/github/stars/devrabiul/laravel-cookie-consent?style=social)
 
 ## Features
